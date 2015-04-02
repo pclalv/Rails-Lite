@@ -1,3 +1,13 @@
 <h1>All the carbs</h1>
-<pre><%= @pastas.to_s %></pre>
-<a href="/pastas/new">Add your favorite!</a>
+
+<ul>
+  <% @pastas.each do |pasta| %>
+    <li>
+      <a href="<%= 'pastas/' + pasta.id.to_s + '/entrees' %>"><%= pasta.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+<figure>
+  <a href="/pastas/new">Add your favorite!</a>
+</figure>
